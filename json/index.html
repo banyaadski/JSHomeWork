@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .content{
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+        }
+        .content_box{
+            width: 250px;
+            border: 1px solid #000;
+            padding: 16px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content"></div>
+    <script src="data.js"></script>
+    <script>
+
+        // const usersData = JSON.parse(dataInfo);
+        // dataInfo.forEach(element => {
+        //     console.log(`вот имя ${element.name}`);;
+
+        // });    
+        const contentEl = document.querySelector('.content');
+
+        dataInfo.forEach(data => {
+            const divEl = document.createElement('div');
+            divEl.classList.add('content_box');
+
+            const countEl = document.createElement('h1');
+            countEl.classList.add('content__count');
+            countEl.textContent = data.count;
+
+            const genderEl = document.createElement('p');
+            genderEl.classList.add('content__gender');
+            genderEl.textContent = data.gender;
+
+            const nameEl = document.createElement('p');
+            nameEl.classList.add('content__name');
+            nameEl.textContent = data.name;
+
+            const probabEl = document.createElement('p');
+            probabEl.classList.add('content__probab');
+            probabEl.textContent = data.probability;
+
+            
+
+            contentEl.appendChild(divEl);
+
+            divEl.appendChild(countEl);
+            divEl.appendChild(genderEl);
+            divEl.appendChild(nameEl);
+            divEl.appendChild(probabEl);
+        });
+
+    </script>
+</body>
+
+</html>
