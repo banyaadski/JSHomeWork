@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="box-content">
+        
+    </div>
+    <script src="data.js"></script>
+    <script>
+        const boxEl = document.querySelector('.box-content');
+        
+        dataProd.forEach(element => {
+            const itemElement = document.createElement('div');
+            itemElement.classList.add('item');
+            boxEl.appendChild(itemElement);
+
+            const imgEl = document.createElement('img');
+            imgEl.setAttribute('src', element.image);
+            imgEl.classList.add('item');
+            itemElement.appendChild(imgEl);
+
+            const aEl = document.createElement('a');
+            aEl.classList.add('item_text');
+            aEl.textContent = element.name;
+            itemElement.appendChild(aEl);
+
+            const pEl = document.createElement('p');
+            pEl.classList.add('item_parag');
+            pEl.textContent = element.info;
+            itemElement.appendChild(pEl);
+
+            const h2El = document.createElement('h2');
+            h2El.classList.add('item_price');
+            h2El.textContent = `$${element.price}`;
+            itemElement.appendChild(h2El);
+
+        });
+    </script>
+</body>
+
+</html>

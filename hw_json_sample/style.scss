@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    color: #F16D7F;
+}
+.box-content{
+    display: grid;
+    gap: 30px;
+    padding-bottom: 128px;
+    grid-template-columns: repeat(3, 360px);
+}
+.item{
+     &_text{
+            font-style: normal;
+            font-weight: 400;
+            font-size: 13px;
+            line-height: 16px;
+            color: #000000;
+        }
+        &_text:hover{
+            color: #F16D7F;
+        }
+        &_parag{
+            font-family: 'Lato';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 17px;
+        color: #5D5D5D;
+        }
+        &_price{
+            font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+    
+        color: #F16D7F;
+        }
+}
